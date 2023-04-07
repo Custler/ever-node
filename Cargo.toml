@@ -1,8 +1,13 @@
 [package]
-build = 'common/build/build.rs'
+build = "common/build/build.rs"
 edition = '2021'
 name = 'ton_node'
-version = '0.52.4'
+version = '0.52.5'
+
+[profile.release]
+lto = "fat"
+codegen-units = 1
+panic = "abort"
 
 [workspace]
 members = [ 'storage' ]
